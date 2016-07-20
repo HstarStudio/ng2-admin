@@ -294,12 +294,15 @@
       change_skin($(this).data('skin'));
     });
 
+    //Fixed layout / Boxed Layout / Toggle Sidebar
     //Add the layout manager
     $("[data-layout]").on('click', function () {
       change_layout($(this).data('layout'));
     });
 
+    //Toggle Right Sidebar Slide
     $("[data-controlsidebar]").on('click', function () {
+      debugger
       change_layout($(this).data('controlsidebar'));
       var slide = !AdminLTE.options.controlSidebarOptions.slide;
       AdminLTE.options.controlSidebarOptions.slide = slide;
@@ -307,6 +310,7 @@
         $('.control-sidebar').removeClass('control-sidebar-open');
     });
 
+    //Toggle Right Sidebar Skin
     $("[data-sidebarskin='toggle']").on('click', function () {
       var sidebar = $(".control-sidebar");
       if (sidebar.hasClass("control-sidebar-dark")) {
@@ -318,6 +322,7 @@
       }
     });
 
+    //Sidebar Expand on Hover
     $("[data-enable='expandOnHover']").on('click', function () {
       $(this).attr('disabled', true);
       AdminLTE.pushMenu.expandOnHover();
