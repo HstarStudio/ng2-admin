@@ -6,6 +6,7 @@ import { HTTP_PROVIDERS } from '@angular/http';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { UIROUTER_PROVIDERS, UIRouterConfig, UIROUTER_DIRECTIVES } from 'ui-router-ng2';
 
+import { RouterHelper, ModuleLoader } from './../core';
 import { RootComponent } from './../shell';
 import { AppRouterConfig } from './routes';
 
@@ -19,6 +20,8 @@ bootstrap(RootComponent, [
   ...UIROUTER_PROVIDERS,
   provide(UIRouterConfig, { useClass: AppRouterConfig }),
   provide(PLATFORM_DIRECTIVES, { useValue: UIROUTER_DIRECTIVES, multi: true }),
+  RouterHelper,
+  ModuleLoader,
   disableDeprecatedForms(),
   provideForms()
 ])

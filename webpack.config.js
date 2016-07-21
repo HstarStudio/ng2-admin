@@ -8,8 +8,9 @@ module.exports = {
   debug: true,
   entry: {
     'vendor': './src/bootstrap/vendor.ts',
-    'core': './src/core/index.ts',
-    'main': './src/bootstrap/main.ts'
+    'core': ['./src/core/index.ts'],
+    'main': './src/bootstrap/main.ts',
+    'app-test': './src/modules/app-test/index.ts'
   },
   output: {
     path: 'dist/assets/js',

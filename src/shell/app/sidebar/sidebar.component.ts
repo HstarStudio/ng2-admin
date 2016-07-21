@@ -30,6 +30,7 @@ export class SidebarComponent implements OnInit {
       }, {
         text: 'MailBox',
         icon: 'fa fa-envelope',
+        state: 'appTest.index',
         tags: [
           '<small class="label pull-right bg-yellow">12</small>',
           '<small class="label pull-right bg-green">16</small>',

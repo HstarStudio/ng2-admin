@@ -1,5 +1,5 @@
 <li *ngFor="let item of menuData">
-  <a href="javascript:void(0);">
+  <a href="javascript:void(0);" (click)="go(item)">
     <i class="{{item.icon}}"></i>
     <span> {{item.text}}</span>
     <span *ngIf="item.hasSub" class="pull-right-container">

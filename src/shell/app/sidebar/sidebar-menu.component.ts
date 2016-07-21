@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import {MenuModel} from './MenuModel.interface';
+import {RouterHelper} from './../../../core';
 
 @Component({
   moduleId: module.id,
@@ -17,7 +18,16 @@ export class SidebarMenuComponent implements OnInit {
     this.menuData = value;
   }
 
-  constructor() { }
+  constructor(private routeHelper: RouterHelper) {
+
+  }
+
+  private go(menu): void {
+    if (menu.state) {
+      console.log('go to ', menu.state);
+      this.routeHelper.go(menu.state);
+    }
+  }
 
   ngOnInit() {
 
