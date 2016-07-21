@@ -1,0 +1,8 @@
+.content-header{
+  height: 50px;
+  padding-top: 12px;
+  border-bottom: 1px solid #fff;
+}
+.content-header .breadcrumb{
+  top: 9.5px;
+}

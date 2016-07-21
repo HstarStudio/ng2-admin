@@ -1,0 +1,10 @@
+<li *ngFor="let item of menuData">
+  <a href="javascript:void(0);">
+    <i class="{{item.icon}}"></i>
+    <span> {{item.text}}</span>
+    <span *ngIf="item.hasSub" class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+      </span>
+  </a>
+  <ul class="treeview-menu" jh-sidebar-menu *ngIf="item.subMenu && item.subMenu.length > 0" [menus]="item.subMenu"></ul>
+</li>

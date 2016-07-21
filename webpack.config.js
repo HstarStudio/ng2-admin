@@ -23,7 +23,7 @@ module.exports = {
     loaders: [
       { test: /\.ts$/, loader: 'ts-loader' },
       { test: /\.html$/, loader: 'html-loader' },
-      { test: /\.css$/, loader: 'style!css' }
+      { test: /\.css$/, loader: 'raw' }
     ]
   },
   plugins: [
