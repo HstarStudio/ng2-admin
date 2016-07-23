@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
-import {Http} from '@angular/http';
+import { Http } from '@angular/http';
 
-import {UIRouter} from 'ui-router-ng2';
+import { UIRouter } from 'ui-router-ng2';
 
 @Injectable()
 export class ModuleLoader {

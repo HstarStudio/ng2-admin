@@ -1,12 +1,12 @@
 import { enableProdMode, provide, PLATFORM_DIRECTIVES } from '@angular/core';
 import { APP_BASE_HREF, LocationStrategy, HashLocationStrategy, PlatformLocation } from '@angular/common';
-import { BrowserPlatformLocation } from '@angular/platform-browser';
+import { BrowserPlatformLocation, Title } from '@angular/platform-browser';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { UIROUTER_PROVIDERS, UIRouterConfig, UIROUTER_DIRECTIVES } from 'ui-router-ng2';
 
-import { RouterHelper, ModuleLoader } from './../core';
+import { CORE_SERVICES } from './../core';
 import { RootComponent } from './../shell';
 import { AppRouterConfig } from './routes';
 
@@ -20,10 +20,10 @@ bootstrap(RootComponent, [
   ...UIROUTER_PROVIDERS,
   provide(UIRouterConfig, { useClass: AppRouterConfig }),
   provide(PLATFORM_DIRECTIVES, { useValue: UIROUTER_DIRECTIVES, multi: true }),
-  RouterHelper,
-  ModuleLoader,
   disableDeprecatedForms(),
-  provideForms()
+  provideForms(),
+  Title,
+  ...CORE_SERVICES
 ])
   .then(x => {
     console.log('app started...');

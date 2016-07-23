@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import {MenuModel} from './MenuModel.interface';
-import {RouterHelper} from './../../../core';
+import { MenuModel } from './../../index.d';
+import { RouterHelper } from './../../../core';
 
 @Component({
   moduleId: module.id,

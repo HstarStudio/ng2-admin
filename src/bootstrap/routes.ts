@@ -46,5 +46,7 @@ export class AppRouterConfig implements UIRouterConfig {
         });
       });
     }];
+
+    uiRouter.urlRouterProvider.otherwise('/');
   }
 }

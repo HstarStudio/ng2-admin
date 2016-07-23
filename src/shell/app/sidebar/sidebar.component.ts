@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {MenuModel} from './MenuModel.interface';
-import {SidebarMenuComponent} from './sidebar-menu.component';
+import { MenuModel } from './../../index.d';
+import { SidebarMenuComponent } from './sidebar-menu.component';
 
 @Component({
   moduleId: module.id,
