@@ -11,11 +11,11 @@ interface Event {
 @Injectable()
 export class EventBus {
 
-  private eventMap: Map<string, Event> = new Map();
+  private eventMap: Map<string, Event> = new Map<string, Event>();
   constructor() {
   }
 
-  emit(eventName, data): boolean {
+  emit(eventName: string, data?: any): boolean {
     if (this.eventMap.has(eventName)) {
       this.eventMap.get(eventName).source.next(data);
       return true;
@@ -23,7 +23,7 @@ export class EventBus {
     return false;
   }
 
-  on(eventName, handler): Subscription {
+  on(eventName: string, handler: Function): Subscription {
     let eventObservable;
     if (!this.eventMap.has(eventName)) {
       let eventSource = new Subject<any>();
