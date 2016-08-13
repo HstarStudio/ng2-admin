@@ -1,4 +1,4 @@
-import { enableProdMode, provide, PLATFORM_DIRECTIVES } from '@angular/core';
+import { enableProdMode, provide, NgModule } from '@angular/core';
 import { APP_BASE_HREF, LocationStrategy, HashLocationStrategy, PlatformLocation } from '@angular/common';
 import { BrowserPlatformLocation, Title } from '@angular/platform-browser';
 import { bootstrap } from '@angular/platform-browser-dynamic';
@@ -19,7 +19,7 @@ bootstrap(RootComponent, [
   ...HTTP_PROVIDERS,
   ...UIROUTER_PROVIDERS,
   provide(UIRouterConfig, { useClass: AppRouterConfig }),
-  provide(PLATFORM_DIRECTIVES, { useValue: UIROUTER_DIRECTIVES, multi: true }),
+  provide(NgModule , { useValue: UIROUTER_DIRECTIVES, multi: true }),
   disableDeprecatedForms(),
   provideForms(),
   Title,
