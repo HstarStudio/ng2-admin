@@ -1,5 +1,7 @@
 let webpack = require('webpack');
 let merge = require('webpack-merge');
+let CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = require('./config');
@@ -14,6 +16,9 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': config.dev.env
     }),
+    new CommonsChunkPlugin({
+      name: ['core', 'vendor']
+    }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
@@ -22,7 +27,6 @@ module.exports = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      chunksSortMode: 'dependency',
       chunks: ['vendor', 'core', 'app'],
       inject: true
     })

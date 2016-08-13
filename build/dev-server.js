@@ -34,7 +34,6 @@ app.use(devMiddleware);
 app.use(hotMiddleware);
 
 let staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory);
-console.log(staticPath, __dirname);
 app.use(staticPath, express.static('./static'));
 
 module.exports = app.listen(port, (err) => {

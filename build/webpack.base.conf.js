@@ -5,10 +5,10 @@ let root = path.resolve(__dirname, '../');
 
 module.exports = {
   entry: {
-    'app-test': './src/modules/app-test/index.ts',
-    'app': './src/bootstrap/main.ts',
+    vendor: './src/bootstrap/vendor.ts',
     'core': ['./src/core/index.ts'],
-    vendor: './src/bootstrap/vendor.ts'
+    'app': './src/bootstrap/main.ts',
+    'app-test': './src/modules/app-test/index.ts'
   },
   output: {
     path: config.build.assetsRoot,

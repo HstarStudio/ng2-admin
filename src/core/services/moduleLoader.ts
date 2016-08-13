@@ -22,7 +22,7 @@ export class ModuleLoader {
       return Promise.resolve();
     }
     return new Promise((resolve, reject) => {
-      this.http.get(`../dist/assets/js/${moduleName}.js`)
+      this.http.get(`/${moduleName}.js`)
         .toPromise()
         .then(res => {
           let mod = eval(res.text());
